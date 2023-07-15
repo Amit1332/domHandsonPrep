@@ -24,9 +24,10 @@ button{
     background-color: crimson;
     color: white;
     border: none;
-    padding: 2px 5px;
+    padding: 5px 10px;
     border-radius: 3px ;
     cursor: pointer;
+    font-size: 22px;
 }
 .printbox{
     background-color: rgb(229, 127, 233);
@@ -94,17 +95,17 @@ span{
 }
 
 .checkNum{
-    height: 70px;
+    height: 100px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-top: 10px;
+    margin-top: 50px;
 }
 
 .line{
-height: 5px;
+height: 10px;
 width: 100%;
 background-color: white;
 color: rgb(4, 152, 9);
@@ -143,8 +144,8 @@ gap: 10px;
 
 
 .enterinput input{
-    height: 60px;
-    width: 100px;
+    height: 80px;
+    width: 120px;
     text-align: center;
     font-size: 22px;
 }
@@ -171,7 +172,15 @@ gap: 10px;
     flex-direction: column;
 }
 #guessNum{
-    margin-top: 20px;
+    margin-top: 100px;
+}
+
+#chance{
+    font-size: 22px;
+}
+
+#score{
+    font-size: 22px;
 }
 
 @media (max-width:600px) {
@@ -185,5 +194,19 @@ gap: 10px;
     .enterinput{
         margin-top: 100px;
 
+    }
+    #chance{
+        font-size: 20px;
+    }
+    
+    #score{
+        font-size: 20px;
+    }
+    #wonRes{
+        font-size: 22px;
+    }
+    #result2{
+        margin-top: 10px;
+        width: 200px;
     }
 }
