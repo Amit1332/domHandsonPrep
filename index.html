@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="parnet" style="background-color: blueviolet;">
+        <h4 style="text-align: center; color: rgb(240, 236, 237);">DOM Handson</h4>
+    </div>
+    <br>
+    
+<div class="parnet">
+    <h4><span> Question 1 - </span> Write the code to access element which is having id as "text" ?</h4>
+<div style="display: flex; height: 30px; align-items: center; gap: 5px;">
+    <h5 id="text">Hello Guys</h5>
+    <button onclick="firstClick()">Click</button>
+    <div id="result" class="printbox" style="padding: 2px 3px; border: 1px solid black;">print here ....</div>
+</div>
+</div>
+
+<br>
+
+<div class="parnet">
+<h4><span> Question 2 - </span>Write the code to access element which is having tag as "h1" ?</h4>
+<div style="display: flex; height: 30px; align-items: center; gap: 5px;">
+    <h1>Hello</h1>
+    <button onclick="secondClick()">Click</button>
+    <div id="result1"class="printbox" style="padding: 2px 3px; border: 1px solid black;">print here ....</div>
+</div>
+</div>
+<br>
+
+
+<div class="parnet">
+<h4><span> Question  3 - </span> Write the code to access element which is having class as "box" ?</h4>
+<div style="display: flex; height: 30px; align-items: center; gap: 5px;">
+    <div class="box" style="height:30px; padding: 5px; width: auto; border: 1px solid red;">Box</div>
+    <button onclick="boxClick()">Click</button>
+    <div id="result3" class="printbox" style="padding: 2px 3px; border: 1px solid black;">print here ....</div>
+</div>
+</div>
+<br>
+
+
+<div class="parnet">
+<h4><span> Question 4 - </span>  "Hello Change the heading from ""Hello"" to ""Hello World"" using DOM functions" ?</h4>
+<div style="display: flex; height: 30px; align-items: center; gap: 5px;">
+    <div id="result2" class="printbox" style="padding: 2px 3px; border: 1px solid black;">print here ....</div>
+    Text will change on click question-2  button
+</div>
+</div>
+<br>
+
+<div class="parnet">
+<h4><span> Question 5 - </span> Create an HTML page having content as Hello world and a button named Replace Text. When user will click on this button page content should be changed to "Welcome to Elevation academy" ?</h4>
+<a href="qst5.html">---- Go to Qusestion 5</a>
+
+</div>
+<br>
+
+<div class="parnet">
+<h4><span> Question 6 - </span> "Hello  - Add one style attribute and give text color as red and id attribute and give the id value as ""heading"" in the above given h1 tag using DOM functions" ?</h4>
+<div style="display: flex; height: 30px; align-items: center; gap: 5px;">
+    <h1>Hello</h1>
+    <button onclick="thirdClick()">Click</button>
+</div>
+</div>
+<br>
+
+<div class="parnet">
+<h4><span> Question 7 - </span> Create three cards on HTML page and arrange them using flex property in row or horizontal direction and also create button at the bottom named "Change Flex direction". When user clicks on this button, the cards arrangement should be changed to vertical direction. ?</h4>
+<a href="cardDirection.html">--- Go to question 7</a>
+</div>
+<br>
+
+<div class="parnet">
+    <h4><span>Question 8 - </span>What’s the difference between window vs document?</h4>
+    Ans- The Window Object represents a window/tab containing a DOM document where as document object is property of window object that points to the DOM document loaded in that windows
+</div>
+
+<div class="parnet">
+    <h4><span> Question 9 - </span> Write code to implement timer clock using JS -- display HH:MM:SS -- the time should keep updating every second. ?</h4>
+    <a href="clock.html">--- Go to question 7</a>
+    </div>
+
+
+    <div class="parnet">
+        <h4><span> Question 10 - </span> Guess th number . ?</h4>
+        <a href="guess.html">--- Go to question 10</a>
+        </div>
+    <script>
+
+// question 1
+        let hellotext = document.getElementById("text")
+        let printtext = document.getElementById("result")
+            function firstClick(){
+                printtext.textContent = hellotext.innerText
+            }
+
+
+ // question 2  and question 4
+
+ let getH1 = document.getElementsByTagName("h1")
+ let printtexth1 = document.getElementById("result1")
+ let printtexth11 = document.getElementById("result2")
+
+
+ function secondClick(){
+    printtexth1.textContent = getH1[0].innerText
+    printtexth11.textContent = "Hello World"
+
+
+            }
+
+            // question 3
+            let result3 = document.getElementById("result3")
+            let box = document.getElementsByClassName("box")
+
+            function boxClick(){
+                    result3.textContent=box[0].innerText
+            }
+
+
+            // question 6
+            function thirdClick(){
+                getH1[1].setAttribute("style","color:red;")
+                getH1[1].setAttribute("id","heading")
+
+            }
+
+
+
+
+
+    </script>
+</body>
+</html>

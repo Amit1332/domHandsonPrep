@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body{
+        background-color: rgb(38, 3, 55);
+        color: white;
+        min-height: 100vh;
+    }
+</style>
+<body>
+
+    <div class="guess-container">
+        <div class="play">
+            <button onclick="refresh()">Play Again</button>
+            <h4>(Between 1 and 100)</h4>
+
+        </div>
+        <h2 id="guessNum" style="text-align: center; ">Guess My Number</h2>
+        <div class="checkNum">
+            <div class="line"></div>
+            <div class="checkboxnum">?</div>
+        </div>
+
+        <div class="enterinput">
+            <div class="enternum">
+                <input id="check" type="number">
+                <button onclick="checkNum()" id="checkButton">Check</button>
+
+            </div>
+            <div class="guessing">
+                <h3 id="wonRes">🤔 Start Guessing...</h3>
+
+                <div class="score">
+                    <p id="chance">💯 Chances : 100</p>
+                    <p id="score">🔥Highscore : 00</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script>
+
+let check = document.getElementById("check")
+let guessNum = document.getElementById("guessNum")
+let checkboxnum = document.getElementsByClassName("checkboxnum")
+let line= document.getElementsByClassName("line")
+let chance = document.getElementById("chance")
+let score = document.getElementById("score")
+let wonRes = document.getElementById("wonRes")
+let checkButton =document.getElementById("checkButton")
+let body = document.getElementsByTagName("body")
+
+
+
+function  randomNum(){
+    return Math.floor(Math.random()*(100));
+}
+
+let randomNumber = randomNum()
+var chances =100
+
+chance.innerText=`💯 chances : ${chances}`
+function checkNum(){
+
+    if(parseInt(check.value)>randomNumber){
+        wonRes.innerText = " 🥲 Your Guessing is high  🥲"
+        --chances
+        chance.innerText=`💯 chances : ${chances}`
+
+    }
+   
+    
+    else if(parseInt(check.value)<randomNumber){
+        wonRes.innerText = " 🥲 Your Guessing is Low  🥲"
+        --chances
+        chance.innerText=`💯 chances : ${chances}`
+    }
+    else{
+        wonRes.innerText = "🤩🤩 Hurray 🥇 You Won 🤩🤩"
+        checkboxnum[0].innerText= randomNumber
+        checkboxnum[0].style.boxShadow = "0px 0px 10px green, 0px 0px 15px rgb(3, 143, 24), 0px 0px 20px rgb(3, 143, 120)"
+        line[0].style.backgroundColor= "rgb(3, 143, 120)"
+        score.innerText=`🔥 HighScore : ${chances}`
+        checkButton.style.display="none"
+        body[0].style.background="linear-gradient(45deg , blue ,rgb(128, 4, 152)"
+
+    }
+    
+
+}
+
+function refresh(){
+    chances=100
+    chance.innerText=`💯 chances : ${chances}`
+    wonRes.innerText = "🤔 Start guessing ..."
+    checkButton.style.display="block"
+    check.value=''
+    checkboxnum[0].innerText= "?"
+    randomNumber= randomNum()
+    body[0].style.backgroundColor="rgb(38, 3, 55)"
+
+
+}
+
+    </script>
+</body>
+</html>
